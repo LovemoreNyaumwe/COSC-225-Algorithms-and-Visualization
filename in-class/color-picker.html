@@ -1,0 +1,42 @@
+<!--Project: RGB color picker one square(user-specified RGB)-->
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="color-picker.js" defer></script>
+        <title>RGB demo</title>
+	<style>
+	  #color-box{
+	      width: 400px;
+	      height:400px;
+	      background-color: gray;}
+	  label {
+	      display: inline-block;
+	      width: 45%;
+	  }
+	</style>
+    </head>
+    <body>
+      <div style="max-width: 400px; margin: auto;">
+      <h1>RGB color picker</h1>
+      <div id="color-box"></div>
+      <div id="one">
+        <label for="redVal">Choose a value for red: </label>
+	<input type="range" name="red" id="red" min="0" max="255" step="1" value="128">
+	<output class="red-output" for="redVal"></output>
+      </div>
+
+      <div id="two">
+	<label for="greenVal">Choose a value for green: </label>
+	<input type="range" name="green" id="green" min="0" max="255" step="1" value="128">
+	<output class="green-output" for="greenVal"></output>
+      </div>
+
+      <div id="three">
+	<label for="blueVal">Choose a value for  blue:  </label>
+	<input type="range" name="blue" id="blue" min="0" max="255" step="1" value="128">
+	<output class="blue-output" for="blueVal"></output>
+      </div>
+      </div>
+    </body>
+</html>

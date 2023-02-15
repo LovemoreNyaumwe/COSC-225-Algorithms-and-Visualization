@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Stylish Boxes</title>
+    <style>
+      body {
+	  background-color: gray;
+      }
+      
+      div {
+	  position: absolute;
+	  background-color: black;
+      }
+
+      .outer-box {
+	  /* background-color: black; */
+	  width: 300px;
+	  height: 300px;
+      }
+
+      .inner-box {
+	  width: 100px;
+	  height: 100px;
+	  background-color: white;
+      }
+
+      .special-box {
+	  border: solid white;
+      }
+
+      #blue-box {
+	  background-color: blue;
+	  top: 50px;
+	  left: 50px;
+      }
+
+      #red-box {
+	  background-color: red;
+	  top: 150px;
+	  left: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Stylish Boxes</h1>
+    <div class="outer-box special-box">
+      <div id="blue-box" class="inner-box special-box"></div>
+      <div id="red-box" class="inner-box special-box"></div>
+    </div>
+  </body>
+</html>

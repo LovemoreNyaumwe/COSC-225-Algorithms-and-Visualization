@@ -1,0 +1,30 @@
+<!-- Author: Will Rosenbaum -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Overlapping Boxes</title>
+  </head>
+  <body style="background-color: rgb(200, 200, 200);">
+    
+    <!-- outer white box -->
+    <div style="background-color: white; width: 600px; height: 600px; position: relative;">
+
+      <!-- inner red box-->
+      <div style="position: absolute; background-color: red; width: 500px; height: 150px; top: 100px; left: 50px;"></div>
+
+      <!-- inner orange box -->
+      <div style="position: absolute; background-color: orange; width: 150px; height: 500px; top: 50px; left: 350px;"></div>
+
+      <!-- inner green box -->
+      <div style="position: absolute; background-color: green; width: 500px; height: 150px; top: 350px; left: 50px;"></div>
+
+      <!-- inner blue box top -->
+      <div style="position: absolute; background-color: blue; width: 150px; height: 50px; top: 50px; left: 100px;"></div>
+
+      <!-- inner blue box bottom -->
+      <div style="position: absolute; background-color: blue; width: 150px; height: 300px; top: 250px; left: 100px;"></div>
+    </div>
+  </body>
+</html>
