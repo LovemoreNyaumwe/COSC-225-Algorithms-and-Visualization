@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Coordinate Transformations</title>
+    <script src="graph-paper.js" defer></script>
+    <script>
+      function animateBox(selector) {
+	  const animations = document.querySelectorAll(selector);
+	  for (let animation of animations)  {
+	      animation.beginElement();
+	  }
+      }
+    </script>
+    <link rel="stylesheet" href="graph-paper.css" type="text/css"/>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+  </head>
+  <body>
+    <div id="root">
+      <h1>Coordinate Transformations</h1>
+      <p>This page demonstrates some basic coordinate transformations</p>
+      <h3>Translate</h3>
+      <div>
+	<svg id="translate-demo"
+	     class="graph-box" xmlns="http://www.w3.org/2000/svg"
+	     width="600" height="400"
+	     viewBox="-50 -30 150 100">
+	  <g id="box-group" transform="matrix(1, 0, 0, -1, 0, 40)">
+	    <rect class="box" x="0" y="0" width="20" height="20"/>
+	    <rect class="box transformed" x="0" y="0" width="20" height="20"
+		  transform="translate(20, 30)"/>
+	    <g class="animate-group">
+	      <rect id="translate-box" x="0" y="0" width="20" height="20" fill="rgba(255,0,0,0.5)"/>
+	      <line class="grid-line-overlay" x1="0" y1="0" x2="20" y2="0"/>
+	      <line class="grid-line-overlay" x1="0" y1="10" x2="20" y2="10"/>
+	      <line class="grid-line-overlay" x1="0" y1="20" x2="20" y2="20"/>
+	      <line class="grid-line-overlay" x1="0" y1="0" x2="0" y2="20"/>
+	      <line class="grid-line-overlay" x1="10" y1="0" x2="10" y2="20"/>
+	      <line class="grid-line-overlay" x1="20" y1="0" x2="20" y2="20"/>
+	      <animateTransform class="rect-animation"
+				id="translate-animation"
+				attributeName="transform"
+				type="translate"
+				values="0 0;
+    					0 0;
+					20 30;
+					20 30;"
+				keyTimes="0; 0.33; 0.67; 1.0;"
+				keySplines="
+					    0.1 0.2 0.2 1;
+					    0.1 0.2 0.2 1;
+					    0.1 0.2 0.2 1;"
+				calcMode="spline"
+				additive="sum"
+				begin="indefinite"
+				dur="2s"
+				fill="freeze"
+				repeatCount="1"/>
+	    </g>
+	  </g>
+	</svg>
+      </div>
+      <button onClick="animateBox('#translate-animation')">animate translate(20, 30)</button>
+
+      <h3>Rotate</h3>
+      <div>
+	<svg id="translate-demo"
+	     class="graph-box" xmlns="http://www.w3.org/2000/svg"
+	     width="600" height="400"
+	     viewBox="-50 -30 150 100">
+	  <g id="box-group" transform="matrix(1, 0, 0, -1, 0, 40)">
+	    <rect class="box" x="0" y="0" width="20" height="20"/>
+	    <rect class="box transformed" x="0" y="0" width="20" height="20"
+		  transform="rotate(120)"/>
+	    <g class="animate-group">
+	      <rect id="rotate-box" x="0" y="0" width="20" height="20" fill="rgba(255,0,0,0.5)"/>
+	      <line class="grid-line-overlay" x1="0" y1="0" x2="20" y2="0"/>
+	      <line class="grid-line-overlay" x1="0" y1="10" x2="20" y2="10"/>
+	      <line class="grid-line-overlay" x1="0" y1="20" x2="20" y2="20"/>
+	      <line class="grid-line-overlay" x1="0" y1="0" x2="0" y2="20"/>
+	      <line class="grid-line-overlay" x1="10" y1="0" x2="10" y2="20"/>
+	      <line class="grid-line-overlay" x1="20" y1="0" x2="20" y2="20"/>
+	      <animateTransform class="rect-animation"
+				id="rotate-animation"
+				attributeName="transform"
+				type="rotate"
+				values="0;
+    					0;
+					120;
+					120;"
+				keyTimes="0; 0.33; 0.67; 1.0;"
+				keySplines="
+					    0.1 0.2 0.2 1;
+					    0.1 0.2 0.2 1;
+					    0.1 0.2 0.2 1;"
+				calcMode="spline"
+				additive="sum"
+				begin="indefinite"
+				dur="2s"
+				fill="freeze"
+				repeatCount="1"/>
+	    </g>
+	  </g>
+	</svg>
+      </div>
+      <button onClick="animateBox('#rotate-animation')">animate rotate(120)</button>
+
+
+     
+      <h3>Scale</h3>
+      <div>
+	<svg id="scale-demo"
+	     class="graph-box" xmlns="http://www.w3.org/2000/svg"
+	     width="600" height="400"
+	     viewBox="-50 -30 150 100">
+	  <g id="box-group" transform="matrix(1, 0, 0, -1, 0, 40)">
+	    <rect class="box" x="0" y="0" width="20" height="20"/>
+	    <rect class="box transformed" x="0" y="0" width="20" height="20"
+		  transform="scale(2.5)"/>
+	    <g class="animate-group">
+	      <rect id="animate-tsr" x="0" y="0" width="20" height="20" fill="rgba(255,0,0,0.5)"/>
+	      <line class="grid-line-overlay" x1="0" y1="0" x2="20" y2="0"/>
+	      <line class="grid-line-overlay" x1="0" y1="10" x2="20" y2="10"/>
+	      <line class="grid-line-overlay" x1="0" y1="20" x2="20" y2="20"/>
+	      <line class="grid-line-overlay" x1="0" y1="0" x2="0" y2="20"/>
+	      <line class="grid-line-overlay" x1="10" y1="0" x2="10" y2="20"/>
+	      <line class="grid-line-overlay" x1="20" y1="0" x2="20" y2="20"/>
+	      <animateTransform class="rect-animation"
+				id="scale-animation"
+				attributeName="transform"
+				type="scale"
+				values="1;
+    					1;
+					2.5;
+					2.5;"
+				keyTimes="0; 0.33; 0.67; 1.0;"
+				keySplines="
+					    0.1 0.2 0.2 1;
+					    0.1 0.2 0.2 1;
+					    0.1 0.2 0.2 1;"
+				calcMode="spline"
+				additive="sum"
+				begin="indefinite"
+				dur="2s"
+				fill="freeze"
+				repeatCount="1"/>
+	    </g>
+	  </g>
+	</svg>
+      </div>
+      <button onClick="animateBox('#scale-animation')">animate scale(2.5)</button>
+
+      <h3>Composing: Translate then Rotate</h3>
+      <div>
+	<svg id="scale-demo"
+	     class="graph-box" xmlns="http://www.w3.org/2000/svg"
+	     width="600" height="400"
+	     viewBox="-50 -30 150 100">
+	  <g id="box-group" transform="matrix(1, 0, 0, -1, 0, 40)">
+	    <rect class="box" x="0" y="0" width="20" height="20"/>
+	    <rect class="box transformed" x="0" y="0" width="20" height="20"
+		  transform="translate(20, 30) rotate(45)"/>
+	    <g class="animate-group">
+	      <rect id="animate-tsr" x="0" y="0" width="20" height="20" fill="rgba(255,0,0,0.5)"/>
+	      <line class="grid-line-overlay" x1="0" y1="0" x2="20" y2="0"/>
+	      <line class="grid-line-overlay" x1="0" y1="10" x2="20" y2="10"/>
+	      <line class="grid-line-overlay" x1="0" y1="20" x2="20" y2="20"/>
+	      <line class="grid-line-overlay" x1="0" y1="0" x2="0" y2="20"/>
+	      <line class="grid-line-overlay" x1="10" y1="0" x2="10" y2="20"/>
+	      <line class="grid-line-overlay" x1="20" y1="0" x2="20" y2="20"/>
+	      <animateTransform class="translate-rotate"
+				id="translate-rotate-t"
+				attributeName="transform"
+				type="translate"
+				values="0 0;
+    					20 30;
+					20 30;
+					20 30;"
+				keyTimes="0; 0.33; 0.67; 1.0;"
+				keySplines="
+					    0.1 0.2 0.2 1;
+					    0.1 0.2 0.2 1;
+					    0.1 0.2 0.2 1;"
+				calcMode="spline"
+				additive="sum"
+				begin="indefinite"
+				dur="3s"
+				fill="freeze"
+				repeatCount="1"/>
+	      <animateTransform class="translate-rotate"
+				id="translate-rotate-r"
+				attributeName="transform"
+				type="rotate"
+				values="0;
+    					0;
+					45;
+					45;"
+				keyTimes="0; 0.33; 0.67; 1.0;"
+				keySplines="
+					    0.1 0.2 0.2 1;
+					    0.1 0.2 0.2 1;
+					    0.1 0.2 0.2 1;"
+				calcMode="spline"
+				additive="sum"
+				begin="indefinite"
+				dur="3s"
+				fill="freeze"
+				repeatCount="1"/>	      
+	    </g>
+	  </g>
+	</svg>
+      </div>
+      <button onClick="animateBox('.translate-rotate')">animate translate(20, 30) then rotate(45)</button>
+
+      <h3>Composing: Rotate then Translate</h3>
+      <div>
+	<svg id="scale-demo"
+	     class="graph-box" xmlns="http://www.w3.org/2000/svg"
+	     width="600" height="400"
+	     viewBox="-50 -30 150 100">
+	  <g id="box-group" transform="matrix(1, 0, 0, -1, 0, 40)">
+	    <rect class="box" x="0" y="0" width="20" height="20"/>
+	    <rect class="box transformed" x="0" y="0" width="20" height="20"
+		  transform="rotate(45) translate(20, 30)"/>
+	    <g class="animate-group">
+	      <rect id="animate-tsr" x="0" y="0" width="20" height="20" fill="rgba(255,0,0,0.5)"/>
+	      <line class="grid-line-overlay" x1="0" y1="0" x2="20" y2="0"/>
+	      <line class="grid-line-overlay" x1="0" y1="10" x2="20" y2="10"/>
+	      <line class="grid-line-overlay" x1="0" y1="20" x2="20" y2="20"/>
+	      <line class="grid-line-overlay" x1="0" y1="0" x2="0" y2="20"/>
+	      <line class="grid-line-overlay" x1="10" y1="0" x2="10" y2="20"/>
+	      <line class="grid-line-overlay" x1="20" y1="0" x2="20" y2="20"/>
+	      <animateTransform class="rotate-translate"
+				id="rotate-translatet"
+				attributeName="transform"
+				type="translate"
+				values="0 0;
+    					0 0;
+					14.14 14.14;
+					-7.07 35.36;"
+				keyTimes="0; 0.33; 0.67; 1.0;"
+				keySplines="
+					    0.1 0.2 0.2 1;
+					    0.1 0.2 0.2 1;
+					    0.1 0.2 0.2 1;"
+				calcMode="spline"
+				additive="sum"
+				begin="indefinite"
+				dur="3s"
+				fill="freeze"
+				repeatCount="1"/>
+	      <animateTransform class="rotate-translate"
+				id="rotate-translate-r"
+				attributeName="transform"
+				type="rotate"
+				values="0;
+    					45;
+					45;
+					45;"
+				keyTimes="0; 0.33; 0.67; 1.0;"
+				keySplines="
+					    0.1 0.2 0.2 1;
+					    0.1 0.2 0.2 1;
+					    0.1 0.2 0.2 1;"
+				calcMode="spline"
+				additive="sum"
+				begin="indefinite"
+				dur="3s"
+				fill="freeze"
+				repeatCount="1"/>	      
+	    </g>
+	  </g>
+	</svg>
+      </div>
+      <button onClick="animateBox('.rotate-translate')">animate rotate(45) then translate(20, 30)</button>
+      <h3>A More Complicated Transformation</h3>
+      <div>
+	<svg id="scale-demo"
+	     class="graph-box" xmlns="http://www.w3.org/2000/svg"
+	     width="600" height="400"
+	     viewBox="-50 -30 150 100">
+	  <g id="box-group" transform="matrix(1, 0, 0, -1, 0, 40)">
+	    <rect class="box" x="0" y="0" width="20" height="20"/>
+	    <g class="animate-group" transform="matrix(-1, 1, -2, 0.5, 40, 30)">
+	      <rect id="animate-tsr" x="0" y="0" width="20" height="20" fill="rgba(255,0,0,0.5)"/>
+	      <line class="grid-line-overlay" x1="0" y1="0" x2="20" y2="0"/>
+	      <line class="grid-line-overlay" x1="0" y1="10" x2="20" y2="10"/>
+	      <line class="grid-line-overlay" x1="0" y1="20" x2="20" y2="20"/>
+	      <line class="grid-line-overlay" x1="0" y1="0" x2="0" y2="20"/>
+	      <line class="grid-line-overlay" x1="10" y1="0" x2="10" y2="20"/>
+	      <line class="grid-line-overlay" x1="20" y1="0" x2="20" y2="20"/>
+	    </g>
+	  </g>
+	</svg>
+      </div>
+  </body>
+</html>

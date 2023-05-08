@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Convex Hull</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="convex-hull.js" defer></script>
+    <!-- uncomment this line to test your program: -->
+    <!-- <script src="ch-tester.js" defer></script> -->
+  </head>
+  <body>
+    <div id="root">
+      <h1>Convex Hull Demo</h1>
+      <p>Click on the box below to add points.</p>
+      <svg id="convex-hull-box" xmlns="http://www.w3.org/2000/svg" width="600" height="400">
+        <rect width="100%" height="100%" fill="gray"/>
+      </svg>
+      <button onclick="convexHull.start()">Start ConvexHull</button> 
+      <button onclick="convexHull.step()">ConvexHull Step</button> 
+      <button onclick="convexHull.animate()">Animate ConvexHull</button>
+      <p>Messages:</p>
+      <p id="convex-hull-text-box"></p>
+    </div>
+  </body>
+</html>

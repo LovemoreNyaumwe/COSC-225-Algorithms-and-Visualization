@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Recursive Squares</title>
+    <script src="recursive-squares.js" defer></script>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+  </head>
+  <body>
+    <h1>Recursive Squares</h1>
+    <svg id="recursive-squares" width="600" height="600" viewBox="0 0 100 100">
+      <defs id="square-defs">
+	<rect id="square-basic" width="100" height="100" x="0" y="0" stroke="black" stroke-width="0.5%"/>
+      </defs>
+      <rect x="0" y="0" width="100" height="100" stroke="black" stroke-width="1%" fill="white"/>
+      <!-- make the origin in the lower left corner -->
+      <g id="square-group" transform="matrix(1, 0, 0, -1, 0, 100)"></g>	     
+    </svg>
+  </body>
+</html>

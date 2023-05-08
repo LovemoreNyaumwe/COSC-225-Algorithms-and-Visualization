@@ -1,0 +1,26 @@
+body {
+    background-color: rgb(200,200,200);
+    margin: 0px 0px;
+    padding: 0px 0px;
+}
+
+svg {
+    background-color: white;
+    
+}
+
+#root {
+    position: relative;
+    width: 650px;
+    margin: 25px auto 25px auto;
+    padding: 25px;
+    background-color: pink;
+}
+
+.box {
+    fill: rgba(0,0,0,0.2);
+}
+
+.transformed {
+    fill: rgba(255,0,0,0.2);
+}

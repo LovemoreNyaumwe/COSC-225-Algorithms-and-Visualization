@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Sierpiński Snowflake</title>
+    <script src="sierpiński.js" defer></script>
+  </head>
+  <body>
+    <h1>The Sierpiński</h1>
+    <svg id="sierpiński" width="900" height="600" viewBox="0 0 900 600">
+      <defs id="sierpiński-defs">
+      </defs>
+      <rect width="900" height="600" stroke="black" stroke-width="5" fill="white"/>
+      <!-- the transformation of the #sierpiński-group element ensures that
+      positive y-coordinates are in the vertical direction -->
+      <g id="sierpiński-group" transform="matrix(1, 0, 0, -1, 0, 500)"></g>
+    </svg>
+  </body>
+</html>

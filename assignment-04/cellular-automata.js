@@ -19,9 +19,6 @@ function drawTiles(inputArray, rule) {
     let counter = 0;
 
     for(cellRowIndex = 0; cellRowIndex < (gridRows * gridCols); cellRowIndex++) {
-        console.log("Input Array in for loop: " + inputArray);
-        console.log("Counter: " + counter);
-        console.log("cellRowIndex: " + cellRowIndex);
         let gridCell = document.createElement("div");
         let cellColor = "rgb(255, 255, 255)";
         if (counter < inputArray.length && inputArray[counter] == '1') {
@@ -38,14 +35,11 @@ function drawTiles(inputArray, rule) {
     }
 }
 
-function applyRule(rule, inputConfig) {
+function applyRule(inputConfig, rule) {
     var stateConfig = ["111", "110", "101", "100", "011", "010", "001", "000"]
     var ruleBinary = Array.from(convertRule2Binary(rule.toString(2)));
-    console.log("Rule in binary: " + rule.toString(2));
-    console.log("Rule binary: " + ruleBinary);
     var ruleBinaryFutureState = [];
     var configMap = {};
-    console.log("Input array: " + inputConfig);
     for (stateConfigIndex = 0; stateConfigIndex < stateConfig.length; stateConfigIndex++) {
         configMap[stateConfig[stateConfigIndex]] = ruleBinary[stateConfigIndex];
     }
@@ -59,11 +53,7 @@ function applyRule(rule, inputConfig) {
             + String(inputConfig[inputConfigIndex]) + String(inputConfig[(inputConfigIndex + 1) % inputConfig.length]);
         }
         ruleBinaryFutureState.push(configMap[currentState]);
-        console.log("Current State: " + currentState + "Config: " + configMap[currentState]);
     }
-    console.log("Binary rule: " + ruleBinary);
-    console.log(configMap);
-    console.log("New array: " + ruleBinaryFutureState);
     return ruleBinaryFutureState;
 }
 
@@ -83,12 +73,11 @@ function convertRule2Binary(ruleBinary) {
     return ruleBinaryEight;
 }
 
-// const myRuleButton = document.getElementById("myRuleButton");
-// myRuleButton.addEventListener('click', runUserInput)
+// module.exports = { applyRule };
 
-// function runUserInput() {
-//         const inputArray = [0,0,0,0,0,0, 0, 0, 0, 0, 1, 0, 0, 0, 0,0,0,0,0,0, 0];
-//         rule = document.getElementById("myRule").value;
-//         drawTiles(inputArray, rule);
-//         console.log("Hello world!");
-// }
+try {
+    exports.applyRule = applyRule;
+    exports.drawTiles = drawTiles;
+  } catch (e) {
+    console.log("not running in Node");
+  }

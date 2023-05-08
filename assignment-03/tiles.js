@@ -10,11 +10,19 @@ function drawTiles(gridRows, gridCols) {
     root.style.setProperty('--grid-rows', gridRows);
     root.style.setProperty('--grid-columns', gridCols);
 
+    // var colorUsed = new Set();
+
     let r = 0, g = 128, b = 255;
 
     for(cellIndex = 0; cellIndex < (gridRows * gridCols); cellIndex++) {
         let gridCell = document.createElement("div");
         let cellColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+        // if (colorUsed.has(cellColor)) {
+        //     console.log("Repeating color");
+        // } else {
+        //     console.log("No color repeated!");
+        //     colorUsed.add(cellColor);
+        // }
 
         // if (!colorSet.has(cellColor)) {
         //     gridCell.style.backgroundColor = cellColor;

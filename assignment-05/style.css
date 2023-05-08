@@ -1,0 +1,13 @@
+svg {
+    position: relative;
+}
+
+rect {
+    position: relative;
+    display: block;
+    margin: auto;
+}
+
+#root {
+    background-color: pink;
+}

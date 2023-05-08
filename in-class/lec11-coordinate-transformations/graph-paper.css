@@ -1,0 +1,24 @@
+.grid-origin {
+    fill: currentcolor;
+    stroke: none;
+}
+
+.grid-line {
+    stroke: currentcolor;
+    stroke-width: 0.5%;
+}
+
+.axis-line {
+    stroke-width: 1%;
+    marker-end: url(#axis-head);
+    stroke-linecap: butt;
+    stroke: currentcolor;
+}
+
+.grid-line-overlay {
+    stroke: rgb(100, 100, 100);
+    stroke-width: 0.5%;
+    stroke-linecap: square;
+    
+}
+

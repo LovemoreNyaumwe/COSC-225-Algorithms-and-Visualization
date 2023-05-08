@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Animated DFS</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="graph.js" defer></script>
+  </head>
+  <body>
+    <div id=root>
+      <h1>Animated Depth-first Search Demo</h1>
+      <p>Click on the box below to add vertices and edges.</p>
+      <svg id="graph-box" xmlns="http://www.w3.org/2000/svg" width="600" height="400">
+	<rect width="100%" height="100%" fill="gray"/>
+      </svg>
+      <button onclick="dfs.start()">Start DFS</button> <button onclick="dfs.end()">End AStar</button> <button onclick="dfs.step()">DFS Step</button> <button onclick="dfs.animate()">Animate DFS</button>
+      <p>Messages:</p>
+      <p id="graph-text-box"></p>
+    </div>
+  </body>
+</html>

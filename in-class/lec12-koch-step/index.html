@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Koch Snowflake</title>
+    <script src="koch.js" defer></script>
+  </head>
+  <body>
+    <h1>The Koch Snowflake</h1>
+    <svg id="koch" width="600" height="300" viewBox="0 0 600 300">
+      <defs id="koch-defs">
+      </defs>
+      <rect width="600" height="300" stroke="black" stroke-width="5" fill="white"/>
+      <!-- the transformation of the #koch-group element ensures that
+      positive y-coordinates are in the vertical direction -->
+      <g id="koch-group" transform="matrix(1, 0, 0, -1, 0, 300)"></g>	     
+    </svg>
+  </body>
+</html>

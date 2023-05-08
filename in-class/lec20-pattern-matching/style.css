@@ -1,0 +1,38 @@
+#root {
+    background-color: rgb(200, 200, 255);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100svh;
+    width: 100svw;
+    overflow: scroll;
+}
+
+h1 {
+    text-align: center;
+}
+
+.input-block {
+    margin: 1em;
+}
+
+/* a container for letter boxes */
+.container {
+    margin: 1em;
+}
+
+/* a container for the main text */
+#text-container {
+    
+}
+
+/* a container for the pattern to be compared to the main text */
+#pattern-container {
+
+}
+
+/* class for a box representing a single letter in the #text-container
+   or #pattern-container */
+.letter-box {
+    
+}
